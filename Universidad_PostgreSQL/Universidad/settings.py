@@ -55,7 +55,7 @@ ROOT_URLCONF = 'Universidad.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["C:/Users/User/OneDrive/Escritorio/Cursos/Django-3/Universidad_PostgreSQL/Aplicaciones/Academico/plantillas/"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
