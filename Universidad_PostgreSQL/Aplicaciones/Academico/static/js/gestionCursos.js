@@ -23,12 +23,23 @@ console.log("Hola")
         }
     })
 
-    btnsEliminacion.forEach(btn => {
+    btnsEliminacion.forEach((btn) => {
         btn.addEventListener('click', function(e){
-            let confirmacion = confirm("¿Confirma la eliminación del curso?")
-            if (!confirmacion){
-                btn.preventDefault();
-            }
+            e.preventDefault();
+            Swal.fire({
+                title: '¿Confirma la eliminación del curso?',
+                showCancelButton: true,
+                confirmButtonText: 'Eliminar',
+                confirmButtonColor: '#d33',
+                backdrop: true,
+                showLoaderOnConfirm: true,
+                preconfirm: () => {
+                    location.href = e.target.href
+                },
+                allowOutsideClick:() => false,
+                allowEscapeKey:() => false
+
+            })
         })
     })
 })()
