@@ -62,7 +62,7 @@ def eliminar_curso(request, id):
 
     return redirect("/")
 
-def leer_curso(request, id):
+def edicion_curso(request, id):
     curso = Curso.objects.get(id=id)
     data = {
         "titulo":"Edición de cursos",
@@ -71,3 +71,17 @@ def leer_curso(request, id):
 
     return render(request, "edicionCurso.html", data)
 
+def editar_curso(request):
+    id = int(request.POST["id"])
+    nombre = request.POST["txtNombre"]
+    creditos = request.POST["numCreditos"]
+    
+    curso = Curso.objects.get(id=id)
+    curso.nombre = nombre
+    curso.creditos = creditos
+    curso.save()
+
+    return redirect("/")
+
+def contacto(request):
+    return render(request, "contacto.html")
