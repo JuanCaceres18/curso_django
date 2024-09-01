@@ -1,9 +1,8 @@
 const $formularioCurso = document.getElementById('formularioCurso');
 const $txtNombre = document.getElementById('txtNombre');
 const $creditos = document.getElementById('numCreditos');
-const btnsEliminacion = document.querySelectorAll('.btnEliminacion');
 
-console.log("Hola")
+const btnsEliminacion = document.querySelectorAll('.btnEliminacion');
 
 
 (function(){
@@ -33,12 +32,11 @@ console.log("Hola")
                 confirmButtonColor: '#d33',
                 backdrop: true,
                 showLoaderOnConfirm: true,
-                preconfirm: () => {
+                preConfirm: () => {
                     location.href = e.target.href
                 },
                 allowOutsideClick:() => false,
                 allowEscapeKey:() => false
-
             })
         })
     })

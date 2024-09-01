@@ -61,3 +61,13 @@ def eliminar_curso(request, id):
     curso.delete()
 
     return redirect("/")
+
+def leer_curso(request, id):
+    curso = Curso.objects.get(id=id)
+    data = {
+        "titulo":"Edición de cursos",
+        "curso": curso
+    }
+
+    return render(request, "edicionCurso.html", data)
+
